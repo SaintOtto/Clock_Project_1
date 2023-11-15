@@ -22,8 +22,12 @@ let h = new Date().getHours();
 let m = new Date().getMinutes();
 let s = new Date().getSeconds();
 
-// convert to a 12 hour clock
+let am = h >= 12 ? "PM" : "AM"
 
+// convert to a 12 hour clock
+if (h > 12){
+    h = h -12;
+}
 // add zero before single digit number.
 
 h = (h < 10) ? "0" + h : h
@@ -33,5 +37,6 @@ s = (s < 10) ? "0" + s : s
 hours.innerHTML = h;
 miuntes.innerHTML = m;
 seconds.innerHTML = s;
+ampm.innerHTML = am;
 })
 
